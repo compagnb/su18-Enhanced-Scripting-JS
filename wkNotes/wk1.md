@@ -1,4 +1,6 @@
-## Week 1 Introduction & Workspace Set-Up
+## Week 1
+## Introduction & Workspace Set-Up
+
 ![JavaScript Logo](../img/javascript.png)
 
 ### HOW DO PEOPLE ACCESS THE INTERNET?
