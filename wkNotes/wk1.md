@@ -1,124 +1,134 @@
-## Week 1 
-![Giraffe](../imgs/giraffe.gif)
+## Week 1 Introduction & Workspace Set-Up
+![JavaScript Logo](../img/javascript.png)
 
-### OBJECTS & CLASSES
-* **Objects** are a way of organizing code in a program and breaking things down to make it easier to think about complex ideas.
-* **Classes** define classes (types of objects, groups) 
+### HOW DO PEOPLE ACCESS THE INTERNET?
+* People access the internet through **web browsers**.
+* A **web browsers** is a program running on your computer (or smart phone, or iPad or...) through which you access the World Wide Web. The browser’s job is to make it possible for you to visit pages on the web.
+
+![Browser Logos](../img/browser.png)
+
+* **Web Servers** are computers that are always connected to the internet and optimized to send web page data out to the people who request them. 
+
+### HOW DOES THE INTERNET WORK?
+* If we enter a **URL**, or **Universal Resource Locator**, into a browser… 
+
+![Website](../img/website.png)
+
+* The URL gets **parsed** by the  browser. (**Parse** is just a fancy term for dividing something into pieces.)
+
+![Parse](../img/parse.png)
+
+* URLs are formatted like this: 
+
+![URL](../img/url.png)
+
+    * **Protocol** is the **“how”** – it tells your computer which conventions to use when talking to the computer serving the requested page.
+ 
+    * **Server** is the **“where”** – it tells your computer the name of the computer serving the requested page. 
+
+    * **Path** is the **“what”** – it indicates which page you’re interested in accessing on the requested website. 
+
+* Here is an example:
+
+![URL Example](../img/urlex.png) 
+    
+    * The desired **protocol** is **“http”**, which is a special set of rules for requesting and receiving web content. 
+    * The **server** is **“www.github.com”**, which is the name for one or more computers operated by Github. 
+    * The **path** is **“/compagnb“**, which is the name associated with a particular page among many available at the github website.
+
+* After we connect through an ISP...
+
+![Map](../img/map.png)     
+    
+    * First **Browser** connects to the **DNS server**.
+    
+    * The **DNS server** then tells the **browser** the location of the web server hosting the site.
+
+    * The **IP Address** that the **DNS server** returns to your computer allows your browser to contact the **web server** that hosts the website you requested.
+    
+    * The **web server** then sends the page you requested back to your web browser.
+    
+* **ISP** is short for an **Internet Service Provider**, this is a company that provides access to the internet. (i.e. Verizon, optimum, aol)
+
+* **DNS Server** is short for **Domain Name System**, this server translates domain names and hostnames into an IP address. This works like a big phone book! 
+ 
+* **IP Address** is short for **Internet Protocol Address**, it is a unique string of numbers separated by periods that identify each computer connected using an **Internet Protocol** to communicate over a network. (i.e. 127.0.0.0)
+
+* When the browser sends a message to the web server called an **HTTP Request**. It answers the browser with an **HTTP Respond**. 
+    
+![request respond](../img/httpre.png)  
+
+* And when it can’t find what the browser requested...The **HTTP Response** is a 404 error. 
+
+![404](../img/404.png) 
+
+### WEB DEVELOPMENT IS ALL ABOUT COMMUNICATION.
+
+![communication](../img/communication.png) 
+
+* The **client**, which requests pages from the server, and displays them to the user. In most cases, the client is a web browser. The user uses the client in order to surf the web, fill in forms, watch videos online, etc.
+* The **server**, which is responsible for serving pages.
+* **Client-Side programming**
+    * make interactive web pages
+    * make stuff happen dynamically on a web page 
+    * interact with temporary storage, and local storage (cookies, localStorage) 
+    * Languages used: HTML, CSS, JavaScript
+* **Server-Side Programming**
+    * Process user input
+    * Display pages
+    * Structure web applications
+    * Interact with permanent storage (database & files)
+    * Languages used: JavaScript, Rails, Java, Python, SQL, PHP, etc.
+
+* Connecting to a website without a database would look like this:
+
+![no database diagram](../img/nodata.png) 
+
+    * Client asks server for page (“Do you have this page?”).
+    * Server generates the page (create .html file)
+    * Server sent the page to the client (“There is the page”).
 
 
-### BREAKING THINGS INTO CLASSES
-![Classes](../imgs/classes.png)
-* Objects are defined by classes - a to do this is to classify objects into groups
-* Use classes to organize bits of code
-* An object is like a “member” of a class
-```python
-class Things:
-    pass
-```
-* We define classes by using the **class** keyword followed by a name. When we create classes we start with the broadest class first. In this case, we use the keyword **pass** to let Python know we do not have any more information for this class at this time. 
+* Connecting to a website with a database would look like this:
 
-### ADDING OBJECTS TO CLASSES
-* An object of a class is also referred to as an instance of a class
-```python
-geoffrey = Giraffes()
-```
-* This code tells Python to create an object in the Giraffes class and assign it to the variable **geoffrey**.
-* Like a function there are parenthesis after the class name. This is so we can use parameters when we create new objects.
+![database diagram](../img/data.png) 
+    * Client asks server for page (“Do you have this page?”).
+    * Server asks database for info to populate the page (“Found page, need information to load the page”).
+    * Database sends information to server (“sends the information”).
+    * Server uses information to generate the page (create .html file)
+    * Server sent the page to the client (“There is the page”).
 
-### FUNCTIONS OF CLASSES
-* We define a function in a class the same way we call one normally, but the indentation is beneath the class function.
-```python
-class SillyClass:
-    def functionOne():
-        print('this is function 1')
-    def functionTwo():
-        print('this is function 2')
-```
-* We can add **characteristics** to each class to say what it can and cannot do. A characteristic is a trait that all of the members of the class (and its children) share.
-![Characteristics](../imgs/characteristic.png)
-* These **characteristics** can be thought of as actions or **functions** - things an object of that class can do. The **self** parameter is a way for one function to call another function in the class (and in the parent class).
-```python
-class Animals(Things):
-    def breathe(self):
-        pass
-    def move(self):
-        pass
-    def eatFood(self):
-        pass
-```
-* We often created classes with functions that do nothing (using **pass**) as a way to figure out what the class should do, before getting into the details of the individual functions. 
-* Each class can use the characteristics (functions) of its parent, so we don’t have to make really complicated class – we put the functions at the highest parent where the characteristic applies.
-
-### FUNCTIONS CALLING OTHER FUNCTIONS
-* To have a function called in a class we use the self parameter to allow us to call another function. Here is an example:
-```python
-class Giraffes(Mammals):
-    def findFood(self):
-        self.move()
-        print('i found some food')
-        self.eatFood()
-```
-* Often we will write functions that will do something useful, which we can then use inside another function. 
-* By calling functions in this way we can call a single function that does more then just one thing. 
-```python
-def dance(self):
-    self.move()
-    self.move()
-    self.move()
-```
-
-### INITIALIZING AN OBJECT
-* Sometimes when we create an object we want to set some values (also called properties) for later use. When we **initialize** the object, we are really just getting it ready for use. 
-* **__init__** is a special type of function in Python classes and must have this name. It sets the properties for an object when it is first created. It is automatic (we don’t have to call it as a function!)
-```python
-class Giraffes:
-    def __init__(self, spots):
-        self.giraffeSpots = spots
-```
-* Just like the other functions we created within the class, the **__init__** function needs the first parameter to be **self**. Next, we set the parameter to the object variable. Just as we call the object functions using self, variables in the class are also accessed using self. 
-```python
-geoffrey = Giraffes(100)
-april = Giraffes(150)
-print(april.giraffeSpots)
-```
-* When we create an object of a class with an **__init__** function, it has the same effect as actually calling the function, so we need to include a parameter to pass.
-* When we create an object of a class, we can refer to its variables or functions using the dot operator and the name of the variable or function we want to use. 
-
-### WHY USE OBJECTS & CLASSES
-* After we create an object, we can call and run functions provided by its class (and its parents class). We call the function by using the dot operator and the name of the function like this:
-```python
-geoffrey = Giraffes()
-geoffery.move()
-geoffery.eatFromTrees()
-```
-* We can create more objects, and because we are using objects and classes we tell Python exactly which object to do what. 
-```python
-geoffrey = Giraffes()
-april = Giraffes()
-april.move()
-geoffery.eatFromTrees()
-```
 
 ### In-class Exercises/Challenges: 
     * Create a program to calculate our weight on the moon (or any planet):
-        * Create function to take the starting weight and increase the weight each year
-        * Modify the function so that you can change the amount of years
-        * Take input from the user for each and then display how much the user would weigh
-    * Create a class named Giraffe. 
-        * Give the class functions that represent things a giraffe would do. (i.e. eat, sleep, left foot forward, right foot forward, etc.)
-        * Make a function within the Giraffe class to make the giraffe dance by calling other functions within the class. 
-        * Make an instance of the Giraffe, and make the instance dance.
-        * Make two instances and make them both do different things. 
-        * Make two instances of the Giraffe class, that have a different number of spots (characteristics).
-    * Create a class that can be used for all the drivers used in Mario Kart
-    * Create a class that can be used for all the karts used in Mario Kart
+        
 
 ### VOCABULARY:
-* class
-* initialize
-* instance 
-* object
+* web browser
+* web server
+* url
+* parse
+* protocol
+* server
+* client
+* path
+* Internet Service Provider (ISP)
+* dns server
+* ip address
+* http request
+* http response
+* client side programming
+* server side programming
+* Camelcase
 
 ### KEYWORDS:
-* class 
-* pass 
+* var 
+* http
+* createServer
+* function
+* writeHead
+* \n
+* listen
+* process.env.PORT
+* process.env.IP
+* console.log
