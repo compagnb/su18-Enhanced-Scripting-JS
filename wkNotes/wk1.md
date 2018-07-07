@@ -101,9 +101,18 @@
    * Server uses information to generate the page (create .html file)
    * Server sent the page to the client (“There is the page”).
 
+### WHAT IS NODE.JS?
+* Node.js is a JavaScript run-time environment, it includes everything you need to execute a program written in JavaScript.
+* Node.js was created when JavaScript was extended from something you could only run in the browser to something you could run on your machine as a standalone application.
+* JavaScript now has the capability to do things that other scripting languages like Python can do!
+
+### Resources:
+* Node.js website:
+* Node.js’ package ecosystem, or npm.
 
 ### In-class Exercises/Challenges: 
-    * Create a program to calculate our weight on the moon (or any planet):
+    * Server Set-up
+    * Hello World App
         
 
 ### VOCABULARY:
