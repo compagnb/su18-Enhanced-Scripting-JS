@@ -17,11 +17,25 @@ Projects include:
 ### Course Breakdown:
 
 #### [Week 1: Introduction & Workspace Set-Up](wkNotes/wk1.md)
-* Intro To Javascript
+* How The Internet Works
+* Types Of Communication
+* Client vs Server Side Programming
 * Intro To C9.io
-* Intro To Github
+* Intro To Our Github Repository
 * **In-class Exercises/Challenges**: 
     * Set-Up Class Workspace
-* **Vocabulary**: 
-* **Keywords**:  
+    * Client Side Exercise - Mad Libs
+* **Vocabulary**: web browser, web server, url, parse, protocol, server, client, path, Internet Service Provider (ISP), dns server, ip address, http request, http response, client side programming, server side programming
 
+#### [Week 2: Node.js, NPM & JSON ](wkNotes/wk2.md)
+* Review Of Client Side Programming
+* Intro To JavaScript
+* Intro To Node.js & NPM
+* JSON
+* **In-class Exercises/Challenges**: 
+    * Hello World:
+        *  Import required modules  
+        *  Create server 
+        *  Read request and return response
+
+#### [Week 3:  ](wkNotes/wk3.md)
