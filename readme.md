@@ -33,9 +33,7 @@ Projects include:
 * Intro To Node.js & NPM
 * JSON
 * **In-class Exercises/Challenges**: 
-    * Hello World:
-        *  Import required modules  
-        *  Create server 
-        *  Read request and return response
+    * Basic Node
+    * Node File System
 
 #### [Week 3:  ](wkNotes/wk3.md)
